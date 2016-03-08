@@ -1,0 +1,122 @@
+@font-face
+{
+    font-family: "KhmerUI";
+    src:url('fonts/KhmerUI.ttf');
+}
+@font-face
+{
+    font-family: "KhmerUIb";
+    src:url('fonts/KhmerUIb.ttf');
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: "KhmerUI";
+    background-color: #282828;
+}
+
+body
+{
+    text-align: center;
+}
+.adapt
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1400px;
+}
+.Signup
+{
+    margin: 0 auto;
+    width: 350px;
+    height: 330px;
+    margin-top: 110px;
+}
+
+.Signup input[type="text"]
+{
+    
+    width: 320px;
+    height: 17.5px;
+    font-size: 18px; 
+    text-indent: 45px;
+    padding: 17.5px 0;
+    margin-top: 10px;
+    
+    border-radius: 10px;
+    border-style: none;
+    
+    background-color: white;
+    background-image: url(/static/images/user.png);
+    background-position: 5% 35%;
+    background-repeat: no-repeat;
+    text-indent: 45px;
+
+}
+
+.Signup input[type="password"]
+{
+	
+	width: 320px;
+    font-size: 18px; 
+	text-indent: 45px;
+	padding: 16px 0;  /*360浏览器中如果设置了Height会出问题，改了padding，但是框的高度会不一样*/
+	margin-top: 10px;
+    
+    border-radius: 10px;
+    border-style: none;
+    
+    background-color: white;
+    background-image: url(/static/images/password.png);
+    background-position: 5% 35%;
+    background-repeat: no-repeat;
+    text-indent: 45px;
+
+}
+.Signup input[type="email"]
+{
+    
+    width: 320px;
+    height: 17.5px;
+    font-size: 18px; 
+    text-indent: 45px;
+    padding: 17.5px 0;
+    margin-top: 10px;
+    
+    border-radius: 10px;
+    border-style: none;
+    
+    background-color: white;
+    background-image: url(/static/images/email.png);
+    background-position: 5% 35%;
+    background-repeat: no-repeat;
+    text-indent: 45px;
+
+}
+
+.submit
+{
+    width: 320px;
+    height: 40px;
+    margin: 0 auto;
+    margin-left: 14px;
+    border-radius: 10px;
+    background-color: #80c269; 
+    border-style: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    word-spacing: 10px;
+    letter-spacing: 2px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+}
+
+.submit:hover
+{
+    background-color: #4ACF1B;
+}
+

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	
+	<meta charset="UTF-8">
+	<title>Details</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/vina-detail.css">
+
+    <link href="/static/css/main.css" rel="stylesheet" type="text/css" />
+
+<!-- add scripts -->
+<script type="text/javascript" src="/static/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/static/js/highcharts.js"></script>
+<script type="text/javascript" src="/static/js/gray.js"></script>
+<script type="text/javascript" src="/static/{{ username }}/piechart.js"></script>
+
+    <script type="text/javascript" src="/static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="/static/js/e-smart-zoom-jquery.min.js"></script>
+
+    <script type="text/javascript" src="/static/js/drawgraph/d3vina.js"></script>
+
+
+
+    <script type="text/javascript">
+		function changeimg(num){
+
+			document.getElementById('switch_charts').style.display="none";
+			document.getElementById('switch_total').style.display="block";
+               document.getElementById('img1').style.visibility="visible";
+            document.getElementById('chart_2').style.display="none";
+            document.getElementById('img').style.display="none";
+		    var src=document.getElementById('img1').src;
+            if (src.search(/community(\S*).png/)!=-1)
+                var a=src.replace(/community(\S*).png/,"community"+num+".png");
+            else if (src.search(/SNA.png/)!=-1)
+                var a=src.replace(/SNA.png/,"community"+num+".png");
+            else {
+    		 	var substr = src.match(/community(\S*).png/);
+    		 	a=src.replace(substr[1],num);
+			}
+			document.getElementById('img1').src=a;
+		}
+
+		function chart(){
+			
+            {% if comm %}
+                document.getElementById('switch_charts').style.display="none";
+			    document.getElementById('switch_total').style.display="block";
+                document.getElementById('chart_2').style.display="block";
+                document.getElementById('container').style.display="none";
+                document.getElementById('totCom1').style.display="none";
+            {% else %}
+			    document.getElementById('switch_charts').style.display="none";
+			    document.getElementById('switch_total').style.display="block";
+			    document.getElementById('chart_2').style.display="block";
+                document.getElementById('totCom').style.display="none";
+            {% endif %}
+
+		}
+		function total(){
+
+            {% if comm %}
+                document.getElementById('switch_total').style.display="none";
+			    document.getElementById('switch_charts').style.display="block";
+                document.getElementById('chart_2').style.display="none";
+                document.getElementById('img').src="{{ SNApicture }}";
+                document.getElementById('totCom1').style.display="block";
+
+
+           {% else %}
+                document.getElementById('switch_total').style.display="none";
+			document.getElementById('switch_charts').style.display="block";
+            document.getElementById('chart_2').style.display="none";
+			document.getElementById('img').src="{{ SNApicture }}";
+            document.getElementById('totCom').style.display="block";
+            {% endif %}
+
+
+		}
+		</script>
+</head>
+
+<body>
+<div id="warp">
+    <div id="header">
+	    <img src="/static/images/VINA-logo.png">
+    </div>
+
+    <div id="main">
+
+        <div id="left">
+	        <img src="/static/images/nodes.png" title="节点数">
+
+            <div id="nodes">{{ nodes }}</div>
+	        <img src="/static/images/edges.png" title="边数">
+
+            <div id="edges">{{ edges }}</div>
+	        <img src="/static/images/density.png" title="密度：反映社区的紧密程度">
+
+            <div id="density">{{ density }}</div>
+	        <img src="/static/images/degreeCentralization.png" title="点度中心势：反映社区的集中程度">
+
+            <div id="degree">{{ senter }}</div>
+        </div>
+
+    <div id="window">
+
+
+
+        <div id="center">
+
+	        {% if comm %}
+{#                <img id="img1" src="{{ communtiy_picture }}">#}
+                 <div id='container'><script type="text/javascript" src="/static/js/drawgraph/{{ username }}/graph.js"></script></div>
+                <div id="totCom1" class="totCom"><img id="img" src="{{ SNApicture }}"></div>
+                <div id="chart_2" class="chart"></div>
+            {% else %}
+                <div id="totCom" class="totCom"><img id="img" src="{{ SNApicture }}"></div>
+                <div id="chart_2" class="chart"></div>
+            {% endif %}
+
+
+        </div>
+
+        <div id="switch_charts">
+
+				<button id="btn-slide" class="btn-slide" onclick="chart()"><span class="circle"></span>
+					<span class="title">Charts</span> <span class="title-hover" id="" title-hover=""> See Charts</span> </button>
+		</div>
+
+		<div id="switch_total">
+            <P id="charttitle"> 各个社区占的比例</P>
+				<button id="btn-slide1" class="btn-slide1" onclick="total()"><span class="circle1"></span>
+					<span class="title1">Total</span> <span class="title-hover1" id="" title-hover1="">Back to Total</span> </button>
+        </div>
+
+    </div>
+
+        <div id="right">
+            <p>Community</p>
+            <form action="" method="post" enctype="multipart/form-data">
+            <div id="comBtn">
+                <table>
+                {% for i in label %}
+                    <tr>
+                        <td><button name="community" value="{{ forloop.counter }}" onclick='changeimg({{ forloop.counter }})'>{{ forloop.counter }}</button></td>
+                    </tr>
+                {% endfor %}
+                </table>
+            </div>
+            </form>
+        </div>
+    </div>
+
+    <p class="tags">Members</p>
+
+    <div id="tag" >{{ comlabel }} </div>
+
+    <div class="footer" >
+        <img src="/static/images/footer.png">
+	</div>
+</div>
+</body>

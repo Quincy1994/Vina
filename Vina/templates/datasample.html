@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>DataSample</title>
+    <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/dataSample.css">
+</head>
+<body>
+
+<div id="header">
+
+	<img id="logo" src="/static/images/VINA-logo.png">
+
+</div>
+<div id="nav">
+
+<ul>
+    <h2 style="	color: #b3d465;">示例数据集</h2>
+<li><a href="#">足球数据集</a></li>
+<li><a href="#class">班级数据集</a></li>
+<li><a href="#polity">购买政治书籍</a></li>
+<li><a href="#world">悲惨世界人物关系</a></li>
+<li><a href="#zachary">ZACHARY空手道俱<br>乐部成员关系网络</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+    <h1>足球数据集</h1>
+    <h3> 数据摘要:</h3>
+    每个结点代表了参加美国2000年橄榄球赛季的高效代表队，连接两个结点之间的边表示相应两支球队之间至少曾有过一场比赛。<br>规模：77个节点，615条边。<br>
+    出处：M.Girvan and M.E.J.Newman,Proc.Natl.Acad.Sci.USA 99,7821-7826(2002) <br>
+
+<a href="{% url 'datasamplea' %}"><i class="fa fa-arrow-down"></i> download this data set</a>
+
+   <br><br><br>
+
+
+<h1>班级数据集</h1>
+  <h3> 数据摘要:</h3>
+    该数据集通过调查问卷形式调查班级内部的结构情况。调查者给班上的每一成员一张纸条，并请每个人在纸条上写上他认为班上最值得她信赖、平时交往交往较多的其他成员的姓名。该班有42个同学，构建的网络有42个节点，141条边，边表示两个同学的联系紧密。 <br>
+出处：广外智能信息处理研究所<br>
+<a id="polity" href="#"></a>
+<a href="{% url 'datasampleb' %}"><i class="fa fa-arrow-down"></i> download this data set</a>
+<br><br><br>
+
+<a id="polity" href="#"></a>
+
+<h1>购买政治书籍</h1>
+  <h3> 数据摘要:</h3>
+  由V. Krebs从Amazon上销售的美国政治相关书籍页面上建立起来的网络。其节点代表在Amazon在线书店上销售的美国政治相关图书，边代表一定数量的读者同时购买了这两本图书（由抽取网页上的“购买了这本书的读者同时也购买了一些图书”指示得到）。节点分成了三类：l, n和c, 分别代表“自由派”、“保守派”和“中间派”。这些派别的划分是由Mark Newman根据Amazon上对于图书观点以及评价情况的人工分析得到的。规模：105个节点，441条边。<br>
+  <a id="world" href="#"></a>
+出处：Mark Newman,http://www-personal.umich.edu/~mejn/, and V. Krebs website <br>
+<a href="{% url 'datasamplec' %}"><i class="fa fa-arrow-down"></i> download this data set</a>
+<br><br><br>
+
+
+
+<h1>悲惨世界人物关系</h1>
+  <h3> 数据摘要:</h3>
+ D. E. Knuth根据Victor Hugo(维克多.雨果)的小说Les Misèrables,《悲惨世界》,整理了其中的人物关系网络。网络中的节点表示小说中的角色，边表示两个角色同时出现在一幕或多幕中。网络中有六个主要人物，主人公Jean Valjean(冉阿让)，探长Javert(贾维)，神父Bishop Myriel(米里哀)，女工Fantine(芳汀)及其女儿Cosette(珂赛特)。研究人际网络中关键的边(即人物之间的联系)对网络整体性能的影响，发现网络内关键的边，将对舆情和疾病等的传播具有非常重要的意义。规模：网络共有77个节点，508条边。<br>
+出处：Knuth D E, The Stanford Graph Base: A Platform for Combinatorial Computing. Addison-Wesley, Reading, MA,1993<br>
+<a href="{% url 'datasampled' %}"><i class="fa fa-arrow-down"></i> download this data set</a>
+<br><br><br>
+
+<a id="zachary" href="#"></a>
+ 
+ <h1>ZACHARY空手道俱乐部成员关系网络</h1>
+  <h3> 数据摘要:</h3>
+  Zachary空手道俱乐部成员关系网络是复杂网络、社会学分析等领域中最常用的一个小型检测网络之一。从1970到1972年，Wayne Zachary用三年时间观察了美国一所大学空手道俱乐部成员间的社会关系，并构造出了社会关系网（Zachary’s karate club network）。网络中的每个节点分别表示某一个俱乐部成员，节点间的连接表示两个成员经常一起出现在俱乐部活动（如空手道训练、俱乐部聚会等）之外的其他场合，即在俱乐部之外他们可以被称为朋友。调查过程中，该俱乐部因为主管John A.（节点34）与教练Mr. Hi（节点1）之间的争执而分裂成2个各自为核心的小俱乐部，不同颜色与形状的节点代表分裂后的小俱乐部成员。规模：34个节点，78条边。
+<br>
+出处：Zachary W W. An information flow model for conflict and fission in small groups. Journal of Anthropological Research, 1977, 33:452–473<br>
+<a href="{% url 'datasamplee' %}"><i class="fa fa-arrow-down"></i> download this data set</a>
+<br><br><br>
+
+</div>
+
+</body>

@@ -1,0 +1,10 @@
+Auburn,Alabama,Florida,Kentucky,LouisianaTech,LouisianaMonroe,Vanderbilt,MiddleTennesseeState,MississippiState,SouthCarolina,Tennessee,Mississippi,Georgia,LouisianaState,LouisianaLafayette,Arkansas
+NorthernIllinois,WesternMichigan,Akron,BallState,BowlingGreenState,Buffalo,CentralFlorida,CentralMichigan,Connecticut,EasternMichigan,Kent,MiamiOhio,Ohio,Toledo,Marshall
+BrighamYoung,NewMexico,SanDiegoState,NorthTexas,Wyoming,Utah,ArkansasState,BoiseState,ColoradoState,Idaho,NewMexicoState,UtahState,AirForce,NevadaLasVegas
+KansasState,TexasTech,Baylor,Colorado,Kansas,IowaState,Nebraska,TexasA&M,Oklahoma,Texas,Missouri,OklahomaState
+Iowa,PennState,Northwestern,Wisconsin,Michigan,Purdue,OhioState,Minnesota,Illinois,MichiganState,Indiana
+SouthernCalifornia,ArizonaState,UCLA,Arizona,Washington,Oregon,Stanford,WashingtonState,OregonState,California
+VirginiaTech,BostonCollege,WestVirginia,Syracuse,Pittsburgh,Temple,Navy,NotreDame,Rutgers,MiamiFlorida
+EastCarolina,Houston,Louisville,Memphis,SouthernMississippi,Tulane,Army,Cincinnati,AlabamaBirmingham
+FresnoState,Rice,SouthernMethodist,Nevada,SanJoseState,TexasElPaso,Tulsa,TexasChristian,Hawaii
+FloridaState,NorthCarolinaState,Virginia,GeorgiaTech,Duke,NorthCarolina,Clemson,WakeForest,Maryland

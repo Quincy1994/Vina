@@ -1,0 +1,453 @@
+@font-face
+{
+    font-family: "KhmerUI";
+    src:url(fonts/KhmerUI.ttf);
+}
+
+@font-face
+{
+    font-family: "KhmerUIb";
+    src:url(fonts/KhmerUIb.ttf);
+}
+
+@font-face
+{
+    font-family: "Minglan_UI";
+    src:url(Minglan_UI.TTC);
+}
+@font-face
+{
+    font-family: "Minglan_UI_B";
+    src:url(Minglan_UI_B.TTC);
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: "KhmerUI";
+    /*color:#282828;*/
+    background-color: #282828;
+}
+
+body
+{
+    overflow-x:hidden;
+     background-color: #282828;
+}
+
+#warp
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1400px;
+}
+
+#header img
+{
+    position: relative;
+}
+
+#header
+{
+    border-bottom: 2px solid #fff;
+    width:94%;
+    height:85px;
+    margin:0 auto;
+}
+
+#main
+{
+    margin-top: 30px;
+}
+#left
+{
+  position: relative;
+  margin-left: 35px;
+  float: left;
+  height: 530px;
+}
+
+#left div
+{
+    width: 180px;
+    height: 80px;
+    font-family: "KhmerUI";
+    font-weight: bold;
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: #e7e7e7;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 80px;
+}
+
+#center
+{
+    display: inline-block;
+    height: 530px;
+    width: 840px;
+    background-color: white;
+    margin-left: 35px;
+    text-align: center;
+}
+
+#window
+{
+    display: inline-block;
+}
+
+#img
+{
+    width: 500px;
+    height: 500px;
+    margin:15px auto;
+    background-color: transparent;
+
+}
+
+#img1
+{
+    width: 500px;
+    height: 500px;
+    margin:15px auto;
+    background-color: transparent;
+
+}
+.totCom
+{
+    height: 530px;
+    width: 800px;
+    background-color: white;
+    margin-left: 35px;
+    text-align: center;
+}
+#totCom1
+{
+    display: none;
+}
+#chart_2
+{
+    display: none;
+}
+
+
+#charttitle{
+    position: absolute;
+    z-index: 999;
+    color:#282828;
+    width: 300px;
+    margin-left: -375px;
+    margin-top: -430px;
+    font-size: 30px;
+    background-color: transparent;
+}
+
+/*以下是图片放大查看的样式*/
+
+#positionButtonDiv {
+	background: rgb(58, 56, 63);
+	background: rgba(58, 56, 63, 0.8);
+	color: #FFFFFF;
+	padding: 8px;
+	position: absolute;
+	margin-left:705px;
+	top:142px;
+	border-radius: 3px;
+}
+
+.positionMapClass area {
+	cursor: pointer;
+}
+.zoomButton {
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+.detail:hover
+{
+	color: #df5f01;
+}
+
+/*以上是图片放大查看的样式*/
+
+/*以下是滑动按钮的样式*/
+
+/*#switch_charts */
+#switch_charts {
+    text-align: center;
+    position: absolute;
+    top: 600px;
+    margin-left: 685px;
+    background-color: transparent;
+
+}
+
+#switch_total {
+    text-align: center;
+    position: absolute;
+    top: 600px;
+    margin-left: 685px;
+    background-color: transparent;
+    display: none;
+    z-index: 10;
+
+}
+
+.btn-slide
+{
+    width: 120px;
+    height: 31px;
+    border-radius: 50px;
+    border:2px solid #b6d365;
+    background-color: transparent;
+    position: absolute;
+    transition: .5s;
+
+}
+
+.title
+{
+    color: #b6d365;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: transparent;
+    display: inline-block;
+   
+}
+
+.circle
+{   
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: #b6d365;
+    position: absolute;
+    float: right;
+    line-height: 30px;
+    top: 1px;
+    right: 1px;
+    transition: .5s;
+    display: block;
+}
+
+.btn-slide:hover .circle 
+{
+    cursor: pointer;
+    right: 90px;
+    background-color: white;
+}
+.btn-slide:hover 
+{
+    background-color: #b6d365;
+    cursor: pointer;
+}
+
+
+
+.title-hover
+{
+    color:#464646;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: transparent;
+    position: absolute;
+    left: 35px;
+    text-align: center;
+    opacity: 0;
+     transition: .4s;
+}
+
+.btn-slide:hover .title-hover
+{
+    opacity: 1;
+}
+
+
+/*switch_total*/
+
+
+
+.btn-slide1
+{
+    width: 120px;
+    height: 31px;
+    border-radius: 50px;
+    border:2px solid #b6d365;
+    background-color: transparent;
+    position: absolute;
+    transition: .5s;
+
+}
+
+.title1
+{
+    color: #b6d365;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: transparent;
+    display: inline-block;
+   
+}
+
+.circle1
+{   
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: #b6d365;
+    position: absolute;
+    float: right;
+    line-height: 30px;
+    top: 1px;
+    right: 1px;
+    transition: .5s;
+    display: block;
+}
+
+.btn-slide1:hover .circle1 
+{
+    cursor: pointer;
+    right: 90px;
+    background-color: white;
+}
+.btn-slide1:hover 
+{
+    background-color: #b6d365;
+    cursor: pointer;
+}
+
+
+
+.title-hover1
+{
+    color:#464646;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: transparent;
+    position: absolute;
+    left: 20px;
+    text-align: center;
+    opacity: 0;
+     transition: .4s;
+}
+
+.btn-slide1:hover .title-hover1
+{
+    opacity: 1;
+}
+
+
+/*以上是按钮的样式*/
+
+#right
+{
+    width: 200px;
+    height: 530px;
+    display: inline-block;
+    margin-left:40px;
+
+
+}
+
+#right p
+{
+    font-family: "KhmerUI";
+    font-size: 22px;
+    color: #c1c1c1;
+    letter-spacing: 1px;
+    text-align: left;
+    padding-left: 9px;
+}
+
+#comBtn
+{
+    width: 200px;
+    height: 510px;
+    overflow-y:auto; 
+}
+#right table
+{
+    border-spacing: 10px;
+}
+
+#right table button
+{
+    width: 110px;
+    height: 35px;
+    color: #e7e7e7;
+    font-size: 20px; 
+    border-radius: 10px;
+    cursor: pointer;
+    border:none;
+    background-color: rgb( 120, 120, 120 );
+    box-shadow: 1.5px 2.598px 3px 0px rgb( 19, 19, 19 );
+    transition:all .2s;
+}
+
+#right table button:hover
+{
+    background-color: #bababa;
+    color: #282828;
+}
+
+
+/*typ.css*/
+.link { stroke: green; stroke-linejoin:bevel;}
+
+.link_error{
+    stroke:red;
+    stroke-linejoin:bevel;
+}
+
+.nodetext {
+
+    font: 12px sans-serif;
+    -webkit-user-select:none;
+    -moze-user-select:none;
+    stroke-linejoin:bevel;
+
+}
+
+
+#container{
+    width:840px;
+    height:530px;
+}
+/*typ.css*/
+
+.tags
+{
+    font-family: "KhmerUI";
+    font-size: 22px;
+    color: #c1c1c1;
+    letter-spacing: 1px;
+    margin-left:247px;
+    margin-top: 5px; 
+}
+
+#tag
+{
+    border: 2px solid  #c1c1c1;;
+    width: 831px;
+    height: 80px;
+    margin-left: 247px;
+    margin-top: 5px;
+    border-radius: 5px;
+    /*overflow-x:hidden;*/
+    /*overflow-y:auto;*/
+    color:white;
+    padding:4px;
+    word-wrap: break-word;
+    overflow: auto;
+    font-size:20px;
+    letter-spacing: 2px;
+}
+
+
+
+.footer img
+{
+   padding-top: 20px;
+   margin-left: 350px;
+}

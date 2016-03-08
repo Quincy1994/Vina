@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SNA-Login</title>
+	<link rel="stylesheet" href="/static/css/Login-style.css">
+	<script type="text/javascript">
+	window.onload = function () {
+		var onload = document.getElementById('onload');
+		onload.style.cssText = "opacity: 1;";
+	}
+	</script>
+</head>
+
+<body>
+<div class="adapt">
+	<div class="header">
+		<div class="logo">
+			<a href="{% url 'login' %}"><img src="/static/images/VINA-logo.png"></a>
+		</div>
+		<div class="upline"> 
+		</div>
+	</div>
+
+	<div class="mainbody">
+		<div id="onload" class="main_left">
+			<img src="/static/images/example_image.png">
+		</div>
+
+		<div class="main_right">
+			<div class="wrap">
+                {% if password_is_wrong %}
+                    <div class="alert alert-error">
+                     <p style="color:#ff8c69;margin-left:20px">您的用户名或密码错误！</p>
+                    </div>
+                {% endif %}
+				<form action="" method="post" enctype="multipart/form-data">
+					<input type="text" placeholder="Username"  name="username"><br>
+					<input type="password" placeholder="Password" name="password"><br>
+                    <button type="submit">Log In</button>
+                </form>
+				<p>Do not have an account? ——><a href="{% url 'register' %}" style="color:hotpink"><span style="color:hotpink">Sign up</span></a></p>
+			</div>
+			
+		</div>
+
+	</div>
+
+	<div class="footer">
+		<img src="/static/images/footer.png">
+	</div>
+</div>
+</body>
+</html>

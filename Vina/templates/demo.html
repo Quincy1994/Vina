@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>多系列折线图 – MSLine.swf - 演示</title>
+</head>
+<body>
+
+<script type="text/javascript" src="/static/js/FusionCharts.js"></script>
+
+<div id="chartdiv" style="width:600px;margin:0 auto;"></div>
+
+<script type="text/javascript">
+	/* flash文件地址 ， ID ，宽， 高，调0|1 ，不知道 */
+	var chart = new FusionCharts("/static/js/MSLine.swf", "ChartId", "600", "400", "0", "0");
+	/* 表格数据 xml */
+    chart.setXMLUrl('/static/{{ username }}/MSLine.xml?'+Math.random());
+    chart.render("chartdiv");
+             
+</script>
+
+
+</body>
+</html>

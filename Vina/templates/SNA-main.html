@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	
+	<meta charset="UTF-8">
+	<title>SNA-Main</title>
+	<link rel="stylesheet" href="/static/css/Main-style.css">
+	<link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css">
+	<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js">
+	</script>
+	<script type="text/javascript" src="/static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="/static/js/e-smart-zoom-jquery.min.js"></script>
+	<script type="text/javascript">
+	var count='1';
+	
+	$(document).ready(function(){
+		$("#Done").click(function(){
+			count='0';
+			$("#data_import").slideUp(500);
+			document.getElementById('mask').style.display='none';
+		})
+		$("#algorithm_Done").click(function(){
+			$("#chooseAlgorithm").slideUp(500);
+			document.getElementById('mask').style.display='none';
+		})
+
+	})
+
+    $(document).ready(function(){
+	$('#pic').smartZoom({'containerClass':'displayArea'});
+	$('#topPositionMap,#leftPositionMap,#rightPositionMap,#bottomPositionMap').bind("click", moveButtonClickHandler);
+	$('#zoomInButton,#zoomOutButton').bind("click", zoomButtonClickHandler);
+
+	function zoomButtonClickHandler(e){
+		var scaleToAdd = 0.8;
+		if(e.target.id == 'zoomOutButton')
+			scaleToAdd = -scaleToAdd;
+		$('#pic').smartZoom('zoom', scaleToAdd);
+	}
+	function moveButtonClickHandler(e){
+		var pixelsToMoveOnX = 0;
+		var pixelsToMoveOnY = 0;
+
+		switch(e.target.id){
+			case "leftPositionMap":
+				pixelsToMoveOnX = 300;
+			break;
+			case "rightPositionMap":
+				pixelsToMoveOnX = -300;
+			break;
+			case "topPositionMap":
+				pixelsToMoveOnY = 300;
+			break;
+			case "bottomPositionMap":
+				pixelsToMoveOnY = -300;
+			break;
+		    }
+		    $('#pic').smartZoom('pan', pixelsToMoveOnX, pixelsToMoveOnY);
+	    }
+    });
+
+	function importshow(target)
+	{   
+
+		document.getElementById('mask').style.display='block';
+		// document.body.style.overflow-y='hidden';
+		
+		
+		if (target=='data_import') {
+
+			if(count=='1')
+
+				document.getElementById(target).style.display='block';
+
+			else if(count=='0')
+
+				$("#data_import").slideDown(400);
+		}
+
+		else
+		{
+			document.getElementById('chooseAlgorithm').style.display='block';
+
+		}
+		
+		
+
+	}
+
+	$("#cancel").click(function(){
+		$("data_import").hide();
+	});
+
+	function importclose(target)
+	{
+		if(target=='data_import'){
+			count='1';
+			var t = setTimeout("document.getElementById('data_import').style.display='none';document.getElementById('mask').style.display='none';",100);
+			document.getElementById('box1').value='必选文件：支持.xls .txt .csv文件';
+			document.getElementById('box2').value='可选文件：支持.xls .txt .csv文件';	
+		}
+		else if (target=='chooseAlgorithm') {
+			var t = setTimeout("document.getElementById('chooseAlgorithm').style.display='none';document.getElementById('mask').style.display='none';",100);
+			$("#alpha_kmeans").slideUp(200);
+			$("#alpha_onepass").slideUp(200);
+			$("#1").attr("checked",false);
+			$("#2").attr("checked",false);
+			$("#3").attr("checked",false);
+			$("#4").attr("checked",false);
+			$("#5").attr("checked",false);
+
+		}
+		else
+		{
+			var t = setTimeout("document.getElementById('data_import').style.display='none';document.getElementById('chooseAlgorithm').style.display='none';document.getElementById('mask').style.display='none';",100);
+			 $("#1").attr("checked",false);
+		}
+
+	}
+
+	function alpha(target){
+
+		if(target == alpha_kmeans){
+			$("#alpha_onepass").slideUp(50);
+			$("#alpha_kmeans").slideDown(200);
+		}
+		else if(target == alpha_onepass){
+			$("#alpha_kmeans").slideUp(50);
+			$("#alpha_onepass").slideDown(200);
+		}
+		else
+		{
+			$("#alpha_kmeans").slideUp(50);
+			$("#alpha_onepass").slideUp(50);
+		}
+	}
+    function check(){
+        var radios=document.getElementsByName('algo');
+        var j = 0;
+        for(var i=0;i<6;i++)
+        {
+            if(radios[i].checked) {
+                continue;
+            }
+            j++;
+        }
+        if((document.getElementById('file1').value=='')&& (j > 5)){
+            alert('please choose a file and an algorithm !');
+            return false;
+        }
+        if(!(document.getElementById('file1').value=='')&& (j > 5)){
+            alert('please choose an algorithm !');
+            return false;
+        }
+        if((document.getElementById('file1').value=='')&& !(j > 5)) {
+            alert('please choose a file !');
+            return false;
+        }
+        return true;
+
+
+    }
+
+	</script>
+
+</head>
+
+<body>
+    <div id="warp">
+    <form action="" method="post" enctype="multipart/form-data" onsubmit="return check()">
+
+	<div id="mask" onclick="importclose('all')"></div>
+
+	<div class="header">
+
+		<div class="logo">
+			<img src="/static/images/VINA-logo.png">
+		</div >
+
+        <a href="{% url 'help' %}" target="_blank" title="Help"><i id="help" class="fa fa-question fa-2x"></i></a>
+		<a href="{% url 'logout' %}" title="Log out"><i id="logout" class="fa fa-power-off fa-2x"></i></a>
+
+		<div class="upline">
+		</div>
+
+	</div>
+	
+
+	<div class="main">
+
+		<div class="left">
+			<!-- 这里放数据 -->
+            <img src="/static/images/nodes.png" title="节点数">
+	        <div id="nodes">{{ nodes }}</div>
+	        <img src="/static/images/edges.png" title="边数">
+	        <div id="edges">{{ edges }}</div>
+	        <img src="/static/images/communityNum.png" title="社区数">
+	        <div id="community">{{ communities }}</div>
+	        <img src="/static/images/averageWeight.png" title="平均权重">
+	        <div id="Averweight">{{ averageweight }}</div>
+	        <img src="/static/images/module.png" title="模块度:评价社区划分效果的标准，理想值为0.3~0.7">
+	        <div id="Module">{{ module }}</div>
+			<!-- 这里放数据 -->
+		</div>
+
+		<div class="displayArea">
+			<img  id="pic" src="{{ net_url }}" >
+            <!-- 以下是放大图片器 -->
+			<div id="positionButtonDiv">
+		    <p>
+			    <span>
+			    	<img id="zoomInButton" class="zoomButton" src="/static/images/zoomIn.png" title="zoom in" alt="zoom in" />
+			    	<img id="zoomOutButton" class="zoomButton" src="/static/images/ZoomOut.png" title="zoom out" alt="zoom out" />
+			    </span>
+		    </p>
+		    <p>
+			    <span class="positionButtonSpan">
+				    <map name="positionMap" class="positionMapClass">
+				    	<area id="topPositionMap" shape="rect" coords="20,0,40,20" title="move up" alt="move up"/>
+				    	<area id="leftPositionMap" shape="rect" coords="0,20,20,40" title="move left" alt="move left"/>
+				    	<area id="rightPositionMap" shape="rect" coords="40,20,60,40" title="move right" alt="move right"/>
+				    	<area id="bottomPositionMap" shape="rect" coords="20,40,40,60" title="move bottom" alt="move bottom"/>
+				    </map>
+				<img src="/static/images/position.png" usemap="#positionMap" />
+			    </span>
+		    </p>
+		    <p>
+			    <a href="{% url 'details' %}" target="_blank" style="text-decoration:none"><span class="detail">Details</span></a>
+		    </p>
+                <p>
+			    <a href="{% url 'figure' %}" target="_blank" style="text-decoration:none"><span class="detail">Figure</span></a>
+		    </p>
+	        </div>
+            <!-- 以上是放大图片器 -->
+            <div id="data_import">
+
+				<div class="importArea">
+					
+					<p style="background-color:transparent;">
+						<label  style="color:red;background-color:transparent;font-size:20px;">*</label>
+						<input type="text" id="box1" placeholder="必选文件：支持.xls .txt .csv文件" readonly="readonly"  >
+						<input type="file" id="file1" name="sourcefile" onchange="document.getElementById('box1').value=this.value" />
+						<input type="button" id="button1" value="File" onclick="document.getElementById('file1').click();" /> 
+					</p>
+
+
+					<p style="background-color:transparent;">
+						
+						<input type="text" id="box2" placeholder="可选文件：支持.xls .txt .csv文件" readonly="readonly" >
+						<input type="file" id="file2" name="labelfile" onchange="document.getElementById('box2').value=this.value" />
+						<input type="button" id="button2" value="File" onclick="document.getElementById('file2').click();" /> 
+					</p>
+
+                    <input id="Done" value="Done" />
+					<input id="cancel" onclick="importclose('data_import');" value="Cancel">
+				</div>
+			</div>
+
+			<div id="chooseAlgorithm">
+
+                <div id="algorithmList">
+					<p class="LPA"><input name="algo" value="7" id="1" type="radio" /><label for="1" title="快速高效"><img src="/static/images/LPA.png" onclick="radioChoose('#1')"></label></p>
+					<p class="BGLL" ><input name="algo" value="1" id="2"  type="radio" /><label for="2" title="稳定准确"><img src="/static/images/BGLL.png"  onclick="radioChoose('#2')"></label></p>
+					<p class="walktrap" ><input name="algo" value="2" id="3"  type="radio" /><label for="3" title="社区结构好/划分效果好,基于随机游走"><img src="/static/images/walktrap.png"  onclick="radioChoose('#3')"></label></p>
+					<p class="fastgreedy"><input name="algo" value="6" id="4" type="radio" /><label for="4" title="适用大型加权网络,基于模块度"><img src="/static/images/fastgreedy.png"  onclick="radioChoose('#4')"></label></p>
+				</div>
+
+				<input id="algorithm_cancel" onclick="importclose('chooseAlgorithm');" value="Cancel">
+				<input id="algorithm_Done" onclick="" value="Done">
+			</div>
+		</div>
+
+		<div class="right">
+{#            <form action="" method="post" enctype="multipart/form-data" onsubmit="return check()">#}
+			<input id="import" onclick="importshow('data_import');">
+            <a href="{% url 'datasample' %}" target="_blank" class="dataset">DataSample</a>
+			<input id="algorithm" onclick="importshow('chooseAlgorithm');">
+			<input id="submit" type="submit" value="Submit">
+{#            </form>#}
+		</div>
+
+    </div>
+
+	<div class="footer" >
+
+		<img src="/static/images/footer.png">
+	</div>
+
+ </form>
+        </div>
+</body>

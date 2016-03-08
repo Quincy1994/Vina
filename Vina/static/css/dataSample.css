@@ -1,0 +1,118 @@
+@font-face
+{
+	font-family: "KhmerUI";
+	src:url(fonts/KhmerUI.ttf);
+}
+@font-face
+{
+	font-family: "KhmerUIb";
+	src:url(fonts/KhmerUIb.ttf);
+}
+
+body
+{
+	margin: 0;
+	padding: 0;
+	x-overflow: hidden;
+}
+
+#header
+{
+	width: 100%;
+	height: 105px;
+	background-color: #282828;
+	box-shadow: 10px;
+	box-shadow: .5px 1px 5px 0px rgb( 0, 0, 0 );
+	z-index: 10;
+	position: fixed;
+}
+#logo
+{
+	margin-left: 15px;
+	margin-top: 10px;
+	position: absolute;
+}
+
+#nav
+{
+	width: 15%;
+	height: 100%;
+	background-color:#282828;
+	position: fixed;
+	z-index: 9;
+	margin-top:-15px;
+}
+
+#nav ul
+{
+	padding-left: 15px;
+}
+
+#nav a
+{
+	text-decoration: none;
+	font-family: "Minglan_UI";
+	font-weight: bold;
+	letter-spacing: 1px;
+	font-size: 14px;
+}
+
+#nav a:link
+{
+	color: #f5f5f5;
+}
+
+
+#nav a:visited
+{
+	color: #f5f5f5;
+}
+
+#content
+{
+	width: 70%;
+	height: 100%;
+	position: absolute;
+	margin-left: 200px;
+	margin-top: 105px;
+	z-index: 7;
+	padding-left: 100px;
+}
+
+
+#content 
+{
+	line-height: 30px;
+}
+
+#content img
+{
+	width: 85%;
+	
+}
+
+#content table
+{
+	width: 200px;
+	height: 30px;
+	border: 1px solid black;
+	text-align: center;
+}
+
+table td
+{
+    
+	border: 1px solid black;
+}
+#nav ul
+{
+	margin-top: 200px;
+}
+#nav ul li
+{
+	display: block;
+	color: white;
+	margin-top: 20px;
+}
+
+

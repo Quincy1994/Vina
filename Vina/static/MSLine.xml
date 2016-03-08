@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='utf-8'?>
+<chart
+caption='community'
+subcaption='subcaption:dont konw ' 
+lineThickness='4' 
+showValues='0' 
+formatNumberScale='1' 
+anchorRadius='4' 
+divLineAlpha='15' 
+divLineColor='666666' 
+divLineIsDashed='1' 
+showAlternateHGridColor='1' 
+alternateHGridColor='666666' 
+shadowAlpha='40' 
+labelStep='2' 
+numvdivlines='5' 
+chartRightMargin='35' 
+bgColor='FFFFFF,FFFFFF' 
+bgAngle='270' 
+bgAlpha='10,10' 
+alternateHGridAlpha='5'  
+legendPosition ='RIGHT ' 
+baseFontSize='12' 
+baseFont='Microsoft YaHei,Helvitica,Verdana,Arial,san-serif' canvasBorderThickness='1' 
+canvasBorderColor='888888' 
+showShadow='1' 
+animation='1' 
+showBorder='0' 
+showToolTip='1' 
+adjustDiv='1' 
+setAdaptiveYMin='1' 
+defaultAnimation='1' 
+xAxisName='com' 
+yAxisName='comNUm' 
+numberPrefix='' 
+> <categories >
+<category label='com1'/>
+<category label='com2'/>
+<category label='com3'/>
+<category label='com4'/>
+<category label='com5'/>
+<category label='com6'/>
+<category label='com7'/>
+<category label='com8'/>
+<category label='com9'/>
+<category label='com10'/>
+</categories >
+<dataset seriesName='comNum' color='99ccff' anchorBorderColor='99ccff' anchorBgColor='ffffff'>
+<set value='16' />
+<set value='15' />
+<set value='14' />
+<set value='12' />
+<set value='11' />
+<set value='10' />
+<set value='10' />
+<set value='9' />
+<set value='9' />
+<set value='9' />
+</dataset>
+  <styles>
+<definition>
+<style name='CaptionFont' type='font' size='12'/>
+</definition>
+<application>
+<apply toObject='CAPTION' styles='CaptionFont' />
+<apply toObject='SUBCAPTION' styles='CaptionFont' />
+</application>
+</styles>
+</chart>

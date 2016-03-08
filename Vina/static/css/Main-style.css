@@ -1,0 +1,606 @@
+@font-face
+{
+	font-family: "KhmerUI";
+	src:url(fonts/KhmerUI.ttf);
+}
+@font-face
+{
+	font-family: "KhmerUIb";
+	src:url(fonts/KhmerUIb.ttf);
+}
+@font-face
+{
+	font-family: "Minglan_UI";
+	src:url(fonts/Minglan_UI.TTC);
+}
+@font-face
+{
+	font-family: "Minglan_UI_B";
+	src:url(fonts/Minglan_UI_B.TTC);
+}
+
+
+*
+{
+	margin: 0;
+	padding: 0;
+	font-family: "KhmerUI";
+	background-color: #282828;
+}
+body
+{
+	overflow-x: hidden;
+}
+
+
+#warp
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1400px;
+}
+
+.header :after
+{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+
+.header
+{
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.logo
+{
+	width: 213px;
+	height: 79px;
+	position: absolute;
+	margin-left: 35px;
+}
+
+.logo img
+{
+	position:absolute;
+}
+
+.header .upline
+{	
+	width: 1286px;
+	height: 2px;
+	border-bottom: 2px solid #fff;
+	margin-left: 40px;
+	margin-top: 80px;
+}
+
+#help
+{
+	color: #6a6a6a;
+	position: absolute;
+	margin-left: 1130px;
+	margin-top: 30px;
+	transition:all .3s;
+}
+
+#logout
+{
+	color: #6a6a6a;
+	position: absolute;
+	margin-left: 1210px;
+	margin-top: 30px;
+	transition:all .3s;
+}
+
+#help:hover
+{
+	color: #b3d465;
+	cursor: pointer;
+}
+
+#logout:hover
+{
+	color: #eb7e5d ;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.main
+{
+	width: 1366 px;
+	margin: 0 auto;
+
+	
+	
+}
+/*.main .left
+{
+	width: 180px;
+	height: 550px;
+	background-image: url("images/data_display.png");
+	background-repeat: no-repeat;
+	position: absolute;
+	margin-left: 30px;
+	margin-top: 50px;
+	display: inline-block;
+	z-index: 0;
+
+}*/
+
+.left
+{
+  position: relative;
+  margin-left: 35px;
+  margin-top: 50px;
+  height: 530px;
+  width: 200px;
+  display: inline-block;
+}
+
+.left div
+{
+    width: 180px;
+    height: 80px;
+    font-family: "KhmerUI";
+    font-weight: bold;
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: #e7e7e7;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 80px;
+    word-break:break-all;
+	word-warp:break-word;
+}
+
+
+.main .displayArea
+{
+	width: 800px;
+	height: 550px;
+	position: absolute;
+	margin-left: 35px;
+	margin-top: 50px;
+	border:2px solid #727272;
+	display: inline-block;
+	background-color: white;
+
+	
+}
+
+#pic
+{
+	height: 800px;
+    background-color: transparent;
+}
+
+
+/*以下是图片放大查看的样式*/
+
+#positionButtonDiv {
+	background: rgb(58, 56, 63);
+	background: rgba(58, 56, 63, 0.8);
+	color: #FFFFFF;
+	padding: 8px;
+	text-align: left;
+	position: absolute;
+	right:35px;
+	top:35px;
+	border-radius: 3px;
+}
+/*#positionButtonDiv .positionButtonSpan img {
+	float: right;
+	border: 0;
+}*/
+.positionMapClass area {
+	cursor: pointer;
+}
+.zoomButton {
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+.detail
+{
+	display:block;
+	background-color:white;
+	width:58px;
+	color:#df921f;
+    margin-top: 4px;
+	text-align:center;
+	border-radius:2px;
+	cursor:pointer;
+	font-weight:bold;
+	transition:all .2s;
+}
+
+.detail:hover
+{
+	color: #df5f01;
+}
+
+/*以上是图片放大查看的样式*/
+
+
+#data_import .importArea
+{
+	position: absolute;
+	margin-top: 300px;
+	margin-left: 70px;
+	background-color: transparent;
+}
+
+#mask
+{
+	width:100% ;
+	height:100%;
+	background-color:black;
+	opacity: 0.50;
+	display:none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index:999;
+}
+
+#data_import
+{
+	width: 600px;
+	height: 412px;
+	position: absolute;
+	overflow: hidden;
+	display: none;
+	background-color: #e7e7e7;
+	background-image: url("/static/images/bounce-window_import.png");
+	background-repeat: no-repeat;
+	z-index: 1000;
+	margin-left:102px; 
+	margin-top:20px;
+} 
+
+#box1
+{
+	width: 380px;
+	height: 26px;
+	border-style: none;
+	border-color: rgb(94,94,94);
+	background-color: white;
+	position: absolute;
+	box-shadow:inset 2.5px 2.5px 1px 1px #d6d6d6;
+	text-indent: 3px;
+	letter-spacing: 1px;
+	font-family: "Minglan_UI";
+	color: #787878;
+	top: -5px;
+	left: 12px;
+
+}
+
+#box2
+{
+	width: 380px;
+	height: 26px;
+	border-style: none;
+	border-color: rgb(94,94,94);
+	background-color: white;
+	position: absolute;
+	box-shadow:inset 2.5px 2.5px 1px 1px #d6d6d6;
+	text-indent: 3px;
+	letter-spacing: 1px;
+	font-family: "Minglan_UI";
+	color: #787878;
+	top: 30px;
+	left: 12px;
+}
+
+
+#button1 
+{
+	width: 60px;
+	height: 25px;
+	position: absolute;
+	background-color: rgba( 125, 125, 125, 0.659 );
+	border-style: none;
+	font-size: 18px;
+	color: white;
+	letter-spacing: 1.5px;
+	text-indent: 2px;
+	top:-5px;
+	left: 400px;
+	transition:all 0.3s;
+}
+
+#button2 
+{
+	width: 60px;
+	height: 25px;
+	position: absolute;
+	background-color: rgba( 125, 125, 125, 0.659 );
+	border-style: none;
+	font-size: 18px;
+	color: white;
+	letter-spacing: 1.5px;
+	text-indent: 2px;
+	top:30px;
+	left: 400px;
+	transition:all 0.3s;
+}
+
+#file1
+{
+	display:none;
+
+}
+
+#file2
+{
+	display:none;
+}
+
+
+
+
+#button1:hover
+{
+	background-color: #959494;
+}
+
+
+#button2:hover
+{
+	background-color: #959494;
+}
+
+#Done
+{
+	background-color: rgb( 236, 110, 99 );
+	position: absolute;
+	left: 255px;
+	top: 73px;
+	width: 75px;
+	height: 28px;
+	border-style: none;
+	color: white;
+	font-size: 16px;
+	letter-spacing: 1px;
+	transition:all 0.3s;
+    text-indent: 14px;
+
+
+}
+
+#Done:hover
+{
+	cursor: pointer;
+	background-color: #f1582b;
+}
+
+#cancel
+{
+	background-color: rgba( 54, 46, 43, 0.631 );
+	position: absolute;
+
+	left: 125px;
+	top: 73px;
+	width: 75px;
+	height: 28px;
+	border-style: none;
+	color: white;
+	font-size: 16px;
+    text-indent: 14px;
+	transition: all 0.3s;
+
+}
+
+#cancel:hover
+{
+	cursor: pointer;
+	background-color: #484848;
+}
+
+
+
+
+.main .right
+{
+	width: 150px;
+	height: 550px;
+	position: absolute;
+	margin-left: 900px;
+	margin-top: 50px;
+	display: inline-block;
+
+}
+
+#import
+{
+	width: 123px;
+	height: 125px;
+	margin-top: 30px;
+	background-image: url("/static/images/import.png");
+	border-style: none;
+	cursor: pointer;
+	position: absolute;
+
+}
+
+#algorithm
+{
+	width: 120px;
+	height: 125px;
+	margin-top: 200px;
+	background-image: url("/static/images/algorithm.png");
+	border-style: none;
+	cursor: pointer;
+	position: absolute;
+
+}
+
+#submit
+{
+	width: 120px;
+	height: 45px;
+	position: absolute;
+	margin-top: 440px;
+	margin-left: 7px;
+	border-radius: 10px;
+	background-color:#b3d465;
+	border-style: none;
+	box-shadow: 1.5px 2.598px 3px 0px rgb( 19, 19, 19 );
+
+	font-size: 20px;
+	font-family: "Minglan_UI";
+	color: #242b15;
+	font-weight: bold;
+	letter-spacing: 1px;
+
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+
+}
+
+#submit:hover
+{
+	background-color: #7cfb00;
+}
+
+
+#chooseAlgorithm
+{
+	width: 600px;
+	height: 300px;
+	position: absolute;
+	overflow: hidden;
+	display: none;
+	background-image: url("/static/images/algorithm _bg.png");
+	background-repeat: no-repeat;
+	z-index: 1000;
+	margin-left:102px; 
+	margin-top:80px;
+
+}
+
+#chooseAlgorithm p input
+{
+	margin-left: 20px;
+	height: 70px;
+}
+#chooseAlgorithm label
+{
+	background-color: transparent;
+}
+#chooseAlgorithm label img
+{
+	width: 80px;
+
+}
+
+#algorithmList
+{
+	width: 490px;
+height: 55px;
+position: absolute;
+top: 130px;
+left: 55px;
+ background-color: transparent; 
+
+}
+
+#algorithmList img
+{
+	width: 100px;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+#algorithmList p
+{
+	display: inline-block;
+	background-color: transparent;
+	text-align: center;
+}
+
+
+
+
+
+#algorithm_cancel
+{
+	background-color: rgba( 54, 46, 43, 0.631 );
+	position: absolute;
+
+	left: 180px;
+	top: 250px;
+	width: 75px;
+	height: 28px;
+	border-style: none;
+	color: white;
+	font-size: 16px;
+    text-indent: 14px;
+	transition: all 0.3s;
+
+}
+
+#algorithm_cancel:hover
+{
+	cursor: pointer;
+	background-color: #484848;
+}
+
+#algorithm_Done
+{
+	background-color: rgb( 236, 110, 99 );
+	position: absolute;
+	left: 330px;
+	top: 250px;
+	width: 75px;
+	height: 28px;
+	border-style: none;
+	color: white;
+	font-size: 16px;
+    text-indent: 17px;
+	transition: all 0.3s;
+}
+
+
+#algorithm_Done:hover
+{
+	cursor: pointer;
+	background-color: #f1582b;
+}
+
+.dataset
+{
+	color: #b3d465;
+    font-size: 14px;
+    position: absolute;
+    margin-top: 160px;
+    left: 50%;
+    margin-left: -48px;
+}
+
+
+
+.footer
+{
+	height: 50px;
+	width: 1366px;
+	margin-top: 30px;
+	margin-left: 350px;
+	position: absolute;
+
+}
+

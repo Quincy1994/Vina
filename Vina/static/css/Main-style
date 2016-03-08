@@ -1,0 +1,17 @@
+@font-face
+{
+	font-family: "KhmerUI";
+	src:url(KhmerUI.ttf);
+}
+@font-face
+{
+	font-family: "KhmerUIb";
+	src:url(KhmerUIb.ttf);
+}
+
+*
+{
+	margin: 0;
+	padding: 0;
+	font-family: "KhmerUI";
+	background-color: #282828;

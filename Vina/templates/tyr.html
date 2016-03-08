@@ -1,0 +1,39 @@
+<html>
+<head>
+<script type="text/javascript" src="/static/js/drawgraph/d3vina.js"></script>
+<meta charset="UTF-8">
+<style type="text/css">
+.link { stroke: green; stroke-linejoin:bevel;}
+
+.link_error{
+    stroke:red;
+    stroke-linejoin:bevel;
+}
+
+.nodetext {
+
+    font: 12px sans-serif;
+    -webkit-user-select:none;
+    -moze-user-select:none;
+    stroke-linejoin:bevel;
+    
+}
+
+
+#container{
+    width:1500px;
+    height:1500px;
+    border:1px solid gray;
+    border-radius:5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+</head>
+<body>
+    <div id='container'>
+	<script type="text/javascript" src="{{url_js}}"></script>
+	</div>
+
+</body>
+</html>
